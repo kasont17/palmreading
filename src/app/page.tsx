@@ -481,11 +481,11 @@ export default function Home() {
         <div className="min-h-screen flex flex-col items-center justify-center font-geist-mono p-4">
           <div className="flex flex-col items-center gap-6 w-full max-w-[400px]">
             <div className="flex items-center justify-between w-full animate-fade-in">
-              <button onClick={() => archive.length > 0 ? setAppState("archive") : setAppState("capture")} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">{`< Archive`}</button>
+              <button onClick={() => archive.length > 0 ? setAppState("archive") : setAppState("capture")} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">{`< Back`}</button>
               <div className="w-[30px] h-[50px] relative">
                 <Image src="/logo-small.svg" alt="Logo" fill className="object-contain" />
               </div>
-              <button onClick={startOver} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">Home</button>
+              <button onClick={() => { setCapturedImage(null); setAppState("capture"); setCaptureStep(1); }} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">Re-do</button>
             </div>
 
             <div className="w-full relative flex flex-col items-center">
