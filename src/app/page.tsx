@@ -346,6 +346,11 @@ export default function Home() {
                           className="w-full h-full object-cover"
                           videoConstraints={{ facingMode: "environment" }}
                         />
+                        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-full px-4">
+                          <p className="text-white text-[10px] uppercase tracking-widest text-center">
+                            Place your dominant hand within the frame
+                          </p>
+                        </div>
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
                           <button onClick={(e) => { e.stopPropagation(); capture(); }} className="bg-white text-[#3854a4] hover:bg-white/90 text-[10px] px-6 py-2 font-bold uppercase tracking-widest">
                             CAPTURE
