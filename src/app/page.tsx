@@ -401,40 +401,58 @@ export default function Home() {
 
       {/* Archive State */}
       {appState === "archive" && (
-        <div className="min-h-screen flex flex-col items-center justify-start animate-fade-in font-geist-mono p-4">
-          <div className="flex items-center justify-between w-full max-w-[366px] mb-10">
-            <button onClick={startOver} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">
-              {`< Back`}
-            </button>
-            <p className="text-[12px] text-white uppercase font-bold tracking-widest">THE ARCHIVE</p>
-            <div className="w-[30px] h-[50px] relative">
-              <Image src="/logo-small.svg" alt="Logo" fill className="object-contain" />
+        <div className="min-h-screen flex flex-col items-center justify-center animate-fade-in font-geist-mono p-4">
+          <div className="absolute h-[135.76px] left-0 top-1/2 -translate-y-1/2 w-[17.135px] hidden md:block">
+            <div className="absolute bg-[#3854a4] h-[67.88px] left-0 top-0 w-[8.567px]" />
+            <div className="absolute bg-[#6bbe45] h-[67.88px] left-0 top-[67.88px] w-[8.567px]" />
+            <div className="absolute bg-[#6fccdd] h-[19.112px] left-[8.57px] top-[116.65px] w-[8.567px]" />
+            <div className="absolute bg-[#ee2227] h-[19.112px] left-[8.57px] top-0 w-[8.567px]" />
+          </div>
+
+          <div className="absolute h-[135.76px] right-0 top-1/2 -translate-y-1/2 w-[17.135px] hidden md:block">
+            <div className="h-full relative w-full rotate-180 scale-y-[-1]">
+              <div className="absolute bg-[#f1ea18] h-[67.88px] left-0 top-0 w-[8.567px]" />
+              <div className="absolute bg-[#bb519d] h-[67.88px] left-0 top-[67.88px] w-[8.567px]" />
+              <div className="absolute bg-[#6bbe45] h-[19.112px] left-[8.57px] top-[116.65px] w-[8.567px]" />
+              <div className="absolute bg-[#3854a4] h-[19.112px] left-[8.57px] top-0 w-[8.567px]" />
             </div>
           </div>
 
-          <div className="w-full max-w-[366px] flex flex-col gap-4 overflow-y-auto max-h-[70vh] pr-2">
-            {archive.map((item) => (
-              <div 
-                key={item.id}
-                onClick={() => viewSavedReading(item)}
-                className="bg-white/5 border border-white/10 p-4 flex gap-4 cursor-pointer hover:bg-white/10 transition-colors group relative"
-              >
-                <div className="w-20 h-24 relative overflow-hidden bg-black">
-                  <img src={item.image} alt="Palm" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center">
-                  <p className="text-[10px] text-white/40 uppercase mb-1">{item.date}</p>
-                  <p className="text-[12px] text-white uppercase font-bold line-clamp-2">{item.reading.overallReading}</p>
-                  <p className="text-[10px] text-[#3854a4] uppercase mt-2">{item.dominantHand} hand</p>
-                </div>
-                <button 
-                  onClick={(e) => deleteFromArchive(item.id, e)}
-                  className="absolute top-2 right-2 p-2 text-white/20 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+          <div className="flex flex-col items-center gap-10 w-full max-w-[366px]">
+            <div className="flex items-center justify-between w-full">
+              <button onClick={startOver} className="text-[12px] text-white uppercase hover:opacity-70 transition-opacity">
+                {`< Back`}
+              </button>
+              <div className="w-[30px] h-[50px] relative">
+                <Image src="/logo-small.svg" alt="Logo" fill className="object-contain" />
               </div>
-            ))}
+              <p className="text-[12px] text-white uppercase">Archive</p>
+            </div>
+
+            <div className="w-full flex flex-col gap-4 overflow-y-auto max-h-[400px] pr-2">
+              {archive.map((item) => (
+                <div 
+                  key={item.id}
+                  onClick={() => viewSavedReading(item)}
+                  className="bg-white/5 border border-white/10 p-4 flex gap-4 cursor-pointer hover:bg-white/10 transition-colors group relative"
+                >
+                  <div className="w-20 h-24 relative overflow-hidden bg-black">
+                    <img src={item.image} alt="Palm" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <p className="text-[10px] text-white/40 uppercase mb-1">{item.date}</p>
+                    <p className="text-[12px] text-white uppercase font-bold line-clamp-2">{item.reading.overallReading}</p>
+                    <p className="text-[10px] text-[#3854a4] uppercase mt-2">{item.dominantHand} hand</p>
+                  </div>
+                  <button 
+                    onClick={(e) => deleteFromArchive(item.id, e)}
+                    className="absolute top-2 right-2 p-2 text-white/20 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
