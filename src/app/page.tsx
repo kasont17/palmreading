@@ -333,6 +333,7 @@ export default function Home() {
                       <div className="text-center text-white text-[12px] uppercase leading-relaxed px-4 group-hover:scale-105 transition-transform">
                         <p>Click here to</p>
                         <p>take a picture</p>
+                        <p>of your palm</p>
                       </div>
                     )}
 
