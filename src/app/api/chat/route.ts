@@ -70,7 +70,7 @@ Here is the reading you provided:
 Keep your responses concise (2-4 sentences) unless specifically asked for more detail. Always maintain your mystical persona. Never break character.`;
 
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
       systemInstruction: systemPrompt
     });
 
